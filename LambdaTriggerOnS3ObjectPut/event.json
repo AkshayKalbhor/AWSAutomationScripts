@@ -1,0 +1,38 @@
+{
+    "Records":[
+       {
+          "eventVersion":"2.1",
+          "eventSource":"aws:s3",
+          "awsRegion":"ap-south-1",
+          "eventTime":"2020-08-25T22: 26: 34.227Z",
+          "eventName":"ObjectCreated:Put",
+          "userIdentity":{
+             "principalId":"AWS:AIDEZ6ZM5"
+          },
+          "requestParameters":{
+             "sourceIPAddress":"124.209.149.24"
+          },
+          "responseElements":{
+             "x-amz-request-id":"FBE2E9722BD",
+             "x-amz-id-2":"LRaIYHIopPhZ7TN3Gxl+FC4TouMpu5l0ijtjVkca+KgXOMukeJgWU"
+          },
+          "s3":{
+             "s3SchemaVersion":"1.0",
+             "configurationId":"de263f3a-2a62-47af-9cfe-c80e5a71673a",
+             "bucket":{
+                "name":"bucketName1",
+                "ownerIdentity":{
+                   "principalId":"A1T5YPE0"
+                },
+                "arn":"arn:aws:s3: : :bucketName1"
+             },
+             "object":{
+                "key":"Web.zip",
+                "size":48361,
+                "eTag":"6e12011823077f56e0a",
+                "sequencer":"005F406C49"
+             }
+          }
+       }
+    ]
+ }
