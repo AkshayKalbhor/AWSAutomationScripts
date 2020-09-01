@@ -1,0 +1,11 @@
+{
+    "FacilityID";"送信元のファシリティID",
+    "DATA":[
+        {
+            "DATE":"yyyy-MM-dd HH:mm:ss",
+            "TYPE"; "STRING",
+            "KEY":"Aurora_Status",
+            "MSG":"${message}"
+        }
+    ]
+}

@@ -3,9 +3,8 @@ import os
 import json
 import logging
 
-# ロギングの基本設定(infoレベルを指定)
-logging.basicConfig(level=logging.INFO)
-logging.info('info')
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 def lambda_handler(event, context):
     
@@ -15,13 +14,13 @@ def lambda_handler(event, context):
         filename = records["s3"]["object"]["key"]
         filenameArray = filename.split("-")
         name = filenameArray[len(filenameArray)-1]
-        if name.lower()="app.zip":
+        if name.lower()=="app.zip":
             print("Continue deployment of App")
-        elif name.lower() = "web.zip":
+        elif name.lower()== "web.zip":
             print("Continue deployment of Web")
-        elif name.lower() = "batch.zip":
+        elif name.lower()== "batch.zip":
             print("Continue deployment of batch")
-        else
+        else:
             print("wrong file uploaded")
 
     """alarm_names = []
