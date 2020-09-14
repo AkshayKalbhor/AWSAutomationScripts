@@ -1,0 +1,33 @@
+[root@ip-10-0-1-13 ~]# yum info ruby
+Loaded plugins: amazon-id, search-disabled-repos
+Installed Packages
+Name        : ruby
+Arch        : x86_64
+Version     : 2.0.0.648
+Release     : 36.el7
+Size        : 63 k
+Repo        : installed
+From repo   : rhel-7-server-rhui-rpms
+Summary     : An interpreter of object-oriented scripting language
+URL         : http://ruby-lang.org/
+License     : (Ruby or BSD) and Public Domain
+Description : Ruby is the interpreted scripting language for quick and easy
+            : object-oriented programming.  It has many features to process text
+            : files and to do system management tasks (as in Perl).  It is simple,
+            : straight-forward, and extensible.
+
+
+[root@ip-10-0-1-13 ~]# yum info codedeploy-agent
+Loaded plugins: amazon-id, search-disabled-repos
+Installed Packages
+Name        : codedeploy-agent
+Arch        : noarch
+Version     : 1.1.2
+Release     : 1855
+Size        : 25 M
+Repo        : installed
+From repo   : /codedeploy-agent-1.1.2-1855.noarch.tmp-20200906-1239-1p2k5kf
+Summary     : Provides the required files for CodeDeploy agent to run in EC2 instances
+License     : Amazon.com Internal
+Description : CodeDeploy instance agent is responsible for doing the actual work of deploying software
+            : on an EC2 instance.

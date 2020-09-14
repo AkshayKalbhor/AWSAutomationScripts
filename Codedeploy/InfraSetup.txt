@@ -1,0 +1,69 @@
+instance        :   i-0082fecb3e5de0a7d
+Subnet          :   subnet-041c27f1a07474ace
+Security group  :   sg-0752b1d2e48f01f5c
+
+=====================================================
+===================== Endpoints =====================
+
+Endpoint id     :   vpce-0e1006a1317784151
+Service name    :   com.amazonaws.ap-south-1.ssm
+Security group  :   sg-0248237cd639aaa0c
+Subnet          :   subnet-041c27f1a07474ace
+
+Endpoint id     :   vpce-0da9952b3980a0d00
+Service name    :   com.amazonaws.ap-south-1.ssmmessages
+Security group  :   sg-0248237cd639aaa0c
+Subnet          :   subnet-041c27f1a07474ace
+
+Endpoint id     :   vpce-01e9ffa16b662c75f
+Service name    :   com.amazonaws.ap-south-1.ec2
+Security group  :   sg-0248237cd639aaa0c
+Subnet          :   subnet-041c27f1a07474ace
+
+Endpoint id     :   vpce-07efa40fe894517c4
+Service name    :   com.amazonaws.ap-south-1.ec2messages
+Security group  :   sg-0248237cd639aaa0c
+Subnet          :   subnet-041c27f1a07474ace
+
+===================== VPC =====================
+VPC             :   vpc-020cd8d8e81911348
+CIDR            :   10.0.0.0/16
+
+===================== SUBNETS =====================
+Private Subnet  :   subnet-041c27f1a07474ace
+CIDR            :   10.0.1.0/28
+Route Table     :   rtb-02c91c2e9a4d9c6a3
+
+Public Subnet   :   subnet-015d6a624a9bb0379
+CIDR            :   10.0.32.0/28
+Route Table     :   rtb-065ec662159b68c14
+
+===================== Route table =====================
+Route Table     :   rtb-02c91c2e9a4d9c6a3
+        0.0.0.0/0	nat-0c658d9aad23e8762
+
+Route Table     :   rtb-065ec662159b68c14
+        Destination Target
+        0.0.0.0/0   igw-1821db70
+
+===================== Security groups =====================
+Security group  :   sg-0752b1d2e48f01f5c
+    Inbound :
+    Type            Protocol        Port range      Source
+    HTTP	        TCP	            80	            0.0.0.0/0
+    SSH             TCP         	22          	0.0.0.0/0
+    HTTPS	        TCP         	443         	0.0.0.0/0
+
+    Outbound :
+    Type            Protocol        Port range      Source
+    Alltraffic      All             All         0.0.0.0/0
+
+Security group :    sg-0248237cd639aaa0c
+    Inbound :
+    Type            Protocol        Port range      Source
+    Alltraffic      All             All         0.0.0.0/0
+
+    Outbound :
+    Type            Protocol        Port range      Source
+    Alltraffic      All             All         0.0.0.0/0
+_______________________________________________________
