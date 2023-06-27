@@ -1,7 +1,6 @@
-import boto3
-import os
 import json
 import logging
+import boto3
 
 # ロギングの基本設定(infoレベルを指定)
 logging.basicConfig(level=logging.INFO)
@@ -68,6 +67,8 @@ def lambda_handler(event, context):
     match operation:
         case "start":
             #Check if the instance is stopped
+            ## Commented as the response of the start_instances does not provide details 
+            # of InstanceStatuses as described in the documentation, probably a bug with Boto3.
             #if check_instance_status(instance_id, "stopped"):
             # Start the instance
             logging.info("Executing code to Start the instance.")
