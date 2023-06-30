@@ -1,0 +1,18 @@
+## Overview
+- The function is deployed as a lambda function in the AWS account.
+
+## Parameters
+- @parameters: The script can be invoked with the parameter as the instance-id
+and the second parameter as the operation to be performed.
+
+## Invoking:
+- The function is invoked with the cron job configured in the AWS EventBridge ->
+Scheduler -> Schedules
+- There are 2 schedules configured each to start and stop the server.
+- The instance id is configured here which is sent as a parameter to the lambda.
+- The target configured in each schedule is the lambda function with the payload
+in the following format.
+
+```
+{ "instance_id": "i-instanceid", "operation": "start" }
+```
