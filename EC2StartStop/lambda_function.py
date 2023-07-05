@@ -6,12 +6,13 @@ import boto3
 logging.basicConfig(level=logging.INFO)
 logging.info('info')
 
-def check_instance_status(instance_id, expected_status) -> bool:
+def check_instance_status(instance_id, expected_status):
+    print("in the check_instance_status, checking {} for instance {}".format(expected_status, instance_id))
     client = boto3.client('ec2')
     response = client.describe_instance_status(
         InstanceIds=[instance_id],
     )
-
+    print("The response received from describe_instance_status is: {}".format(response))
     status = response['InstanceStatuses'][0]['InstanceState']['Name']
 
     ## TODO:
@@ -56,29 +57,26 @@ def lambda_handler(event, context):
     client = boto3.client('ec2')
     
     # fetch instance ids to be resized.
-    # Insert your Instance ID here
+    # Insert your Instance ID here for testing
     instance_id = event["instance_id"]
-    #my_instance = 'i-076377f3799ad513b'
 
     ## Fetch the operation to be performed
+    # values can be "start" or "stop"
     operation = event["operation"]
-
 
     match operation:
         case "start":
             #Check if the instance is stopped
-            ## Commented as the response of the start_instances does not provide details 
-            # of InstanceStatuses as described in the documentation, probably a bug with Boto3.
-            #if check_instance_status(instance_id, "stopped"):
+            if check_instance_status(instance_id, "stopped"):
             # Start the instance
-            logging.info("Executing code to Start the instance.")
-            response = client.start_instances(InstanceIds=[instance_id])
-            if check_operation_status(response, "start"):
-                return 1
+                logging.info("Executing code to Start the instance.")
+                response = client.start_instances(InstanceIds=[instance_id])
+                if check_operation_status(response, "start"):
+                    return 1
+                else :
+                    raise Exception("The operation terminated unsuccessfully")
             else :
                 raise Exception("The operation terminated unsuccessfully")
-            #else :
-            #    raise Exception("The operation terminated unsuccessfully")
 
         case "stop":
             #Check if the instance is running
