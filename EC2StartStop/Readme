@@ -16,3 +16,6 @@ in the following format.
 ```
 { "instance_id": "i-instanceid", "operation": "start" }
 ```
+
+## Note
+requires python version 3.10 or newer.
